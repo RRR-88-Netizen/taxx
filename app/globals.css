@@ -1,0 +1,129 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 94.1%; /* #F0F0F0 Light Gray */
+    --foreground: 240 10% 3.9%; /* Default dark gray for text */
+
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 28 100% 55%; /* #FF7719 Deep Orange */
+    --primary-foreground: 0 0% 100%; /* White for contrast on deep orange */
+
+    --secondary: 35 90% 88%; /* #FFEEDB Lighter Peach/Orange */
+    --secondary-foreground: 25 60% 28%; /* #814D24 Darker Brown for secondary text */
+
+    --muted: 0 0% 90%; /* Lighter gray #E5E5E5 */
+    --muted-foreground: 0 0% 45.1%; /* Darker gray for muted text #737373 */
+
+    --accent: 200 53% 85.1%; /* #ADD8E6 Pale Blue */
+    --accent-foreground: 200 60% 25%; /* Darker blue for contrast #2A6E87 */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 85%; /* Gray border #D9D9D9 */
+    --input: 0 0% 98%; /* Off-white input background #FAFAFA */
+    --ring: 28 100% 65%; /* #FF8C4C Bright Orange for focus rings (related to new primary) */
+
+    --radius: 0.5rem;
+
+    /* Chart colors (can be adjusted to fit the theme) */
+    --chart-1: 28 80% 68%; /* #FF9957 Orange for charts */
+    --chart-2: 200 50% 70%;
+    --chart-3: 28 60% 75%; /* Lighter Orange for charts */
+    --chart-4: 200 30% 80%;
+    --chart-5: 25 40% 70%; /* Muted Orange/Brown for charts */
+
+    /* Sidebar specific colors (can inherit or be customized) */
+    --sidebar-background: 0 0% 98%; /* Slightly whiter than main background */
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--accent);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: var(--ring);
+
+    /* Header specific colors */
+    --header-background: 28 100% 55%; /* #FF7719 Deep Orange */
+    --header-foreground: 0 0% 100%;    /* White for text on deep orange */
+  }
+
+  .dark {
+    --background: 240 5% 12%; /* Darker gray-blue */
+    --foreground: 0 0% 95%; /* Light gray */
+
+    --card: 240 5% 15%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 5% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 28 90% 50%; /* #E66A17 Slightly darker/less saturated Deep Orange for dark mode */
+    --primary-foreground: 0 0% 100%; /* White for contrast on deep orange */
+
+    --secondary: 35 45% 30%; /* #6C4A2B Darker muted orange/brown */
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 240 5% 25%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 200 60% 70%; /* Brighter Pale Blue */
+    --accent-foreground: 200 50% 15%; /* Dark Blue */
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5% 25%;
+    --input: 240 5% 20%;
+    --ring: 28 95% 60%; /* #FF8833 Vivid Orange for focus rings (related to new primary dark) */
+
+    /* Chart colors for dark mode */
+    --chart-1: 28 75% 60%; /* #FF9E40 Orange for charts */
+    --chart-2: 200 50% 60%;
+    --chart-3: 28 55% 65%; /* Lighter Orange for charts */
+    --chart-4: 200 30% 70%;
+    --chart-5: 25 35% 55%; /* Muted Orange/Brown for charts */
+    
+    /* Sidebar specific colors for dark mode */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--accent);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: var(--ring);
+
+    /* Header specific colors for dark mode */
+    --header-background: 28 90% 50%;  /* #E66A17 Deep Orange (slightly muted for dark) */
+    --header-foreground: 0 0% 98%;    /* Off-white for text on deep orange */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex-grow: 1;
+  }
+}
